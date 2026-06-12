@@ -185,22 +185,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // SKILLS ANIMATION (ON INTERSECT)
   // ==========================================================================
   const skillsSection = document.querySelector('#skills');
-  const progressBars = document.querySelectorAll('.skill-bar-fill');
+  const skillItems = document.querySelectorAll('.skill-item');
 
   const animateSkills = (entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        progressBars.forEach(bar => {
-          const width = bar.getAttribute('data-width');
-          bar.style.width = width + '%';
+        skillItems.forEach((item, index) => {
+          setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateX(0)';
+          }, index * 50);
         });
         observer.unobserve(entry.target);
       }
     });
   };
 
-  const skillsObserver = new IntersectionObserver(animateSkills, { threshold: 0.15 });
-  if (skillsSection) skillsObserver.observe(skillsSection);
+  const skillsObserver = new IntersectionObserver(animateSkills, { threshold: 0.1 });
+  if (skillsSection) {
+    skillItems.forEach(item => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateX(-10px)';
+      item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    });
+    skillsObserver.observe(skillsSection);
+  }
 
   // ==========================================================================
   // PROJECT FILTERING

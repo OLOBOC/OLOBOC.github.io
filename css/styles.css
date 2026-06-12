@@ -609,14 +609,17 @@ input, button, textarea {
    ========================================================================== */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
 }
 
 .skills-category {
   padding: 2.2rem;
-  border-radius: 16px;
+  border-radius: 20px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: rgba(12, 18, 32, 0.65);
 }
 
 .skills-cat-title {
@@ -628,58 +631,49 @@ input, button, textarea {
   align-items: center;
   gap: 0.8rem;
   color: var(--text-light);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
 }
 
-.skills-cat-title svg {
+.skills-cat-title svg,
+.skills-cat-title i {
+  color: var(--secondary);
+}
+
+.skills-category:nth-child(even) .skills-cat-title svg,
+.skills-category:nth-child(even) .skills-cat-title i {
   color: var(--primary);
 }
 
 .skills-list {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.4rem;
 }
 
 .skill-item {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  transition: transform var(--transition-fast);
 }
 
-.skill-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  font-size: 0.9rem;
+.skill-item:hover {
+  transform: translateX(4px);
 }
 
 .skill-name {
-  color: var(--text-main);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text-light);
 }
 
-.skill-percentage {
+.skill-details {
+  font-size: 0.85rem;
   color: var(--text-muted);
+  line-height: 1.5;
 }
-
-.skill-bar-bg {
-  width: 100%;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-.skill-bar-fill {
-  height: 100%;
-  border-radius: 3px;
-  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 0; /* Animated via JS */
-}
-
-/* Color thematic for skill categories */
-.skills-category:nth-child(1) .skill-bar-fill { background: var(--grad-primary); }
-.skills-category:nth-child(2) .skill-bar-fill { background: var(--grad-secondary); }
-.skills-category:nth-child(3) .skill-bar-fill { background: var(--grad-tertiary); }
 
 /* Other tools / tags cloud */
 .tools-cloud {
