@@ -1201,101 +1201,314 @@ textarea.form-control {
   .skills-category:last-child {
     grid-column: span 2;
   }
+  .contact-grid {
+    gap: 2.5rem;
+  }
 }
 
 @media (max-width: 768px) {
+  /* --- Navigation --- */
   .menu-toggle {
     display: block;
     z-index: 1001;
   }
-  
+
   .nav-menu {
     position: fixed;
     top: 0;
     right: -100%;
     width: 280px;
     height: 100vh;
-    background: rgba(8, 11, 17, 0.95);
+    background: rgba(8, 11, 17, 0.97);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-left: 1px solid var(--border-color);
     flex-direction: column;
     justify-content: center;
-    gap: 2.5rem;
+    align-items: center;
+    gap: 2rem;
     transition: right var(--transition-normal);
+    padding: 2rem;
   }
-  
+
   .nav-menu.active {
     right: 0;
   }
-  
+
+  .nav-link {
+    font-size: 1.1rem;
+  }
+
+  /* Nav CV button — full width on mobile menu */
+  .nav-menu li:last-child {
+    width: 100%;
+    text-align: center;
+  }
+  .nav-menu li:last-child .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* --- Sections --- */
+  .section {
+    padding: 70px 0 40px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* --- Hero --- */
+  .hero {
+    padding-top: 80px;
+    min-height: 100svh;
+    overflow: hidden;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 1.5rem;
   }
-  
-  .hero-desc {
-    margin: 0 auto 2rem auto;
+
+  /* Use clamp so the name never overflows the viewport */
+  .hero-name {
+    font-size: clamp(1.9rem, 8.5vw, 2.8rem);
+    letter-spacing: -0.5px;
+    word-break: break-word;
   }
-  
-  .hero-actions {
+
+  .hero-title {
+    font-size: clamp(1.1rem, 4.5vw, 1.5rem);
+  }
+
+  .hero-greeting {
     justify-content: center;
   }
-  
+
+  .hero-greeting::before {
+    display: none;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+    margin: 0 auto 2rem auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
+  .hero-actions .btn {
+    font-size: 0.85rem;
+    padding: 0.65rem 1.1rem;
+  }
+
   .hero-art {
     order: -1;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    overflow: hidden;
   }
-  
+
+  /*
+   * FIX: On mobile the sphere rotates (CSS animation), which makes the
+   * absolutely-positioned badges rotate too — appearing upside-down and
+   * creating horizontal overflow. Solution: turn it into a static flex row.
+   */
   .tech-sphere {
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    border-radius: 0;
+    background: transparent;
+    border: none;
+    animation: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0;
+    position: static;
   }
-  
+
   .tech-sphere::before {
-    width: 190px;
-    height: 190px;
+    display: none;
   }
-  
+
+  /* Reset all badges: static pill chips instead of absolutely-positioned items */
+  .floating-badge {
+    position: static;
+    animation: none;
+    transform: none !important;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+  }
+
+  .badge-1, .badge-2, .badge-3 {
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+  }
+
+  /* --- About --- */
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
   }
-  
-  .skills-grid {
+
+  .about-card {
+    padding: 1.8rem;
+  }
+
+  .about-list {
     grid-template-columns: 1fr;
   }
-  
-  .skills-category:last-child {
-    grid-column: span 1;
+
+  /* --- Skills --- */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
+
+  .skills-category:last-child {
+    grid-column: span 2;
+  }
+
+  .skills-category {
+    padding: 1.5rem;
+  }
+
+  /* --- Projects --- */
   .projects-grid {
     grid-template-columns: 1fr;
-    gap: 1.8rem;
+    gap: 1.5rem;
   }
-  
+
+  .projects-filter {
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    font-size: 0.82rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .project-body {
+    padding: 1.5rem;
+  }
+
+  .project-title {
+    font-size: 1.3rem;
+  }
+
+  /* --- Timeline --- */
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    padding-left: 55px;
+    margin-bottom: 2.5rem;
+  }
+
+  .timeline-icon {
+    left: 4px;
+  }
+
+  .timeline-card {
+    padding: 1.5rem;
+  }
+
+  .timeline-title {
+    font-size: 1.1rem;
+  }
+
+  /* --- Contact --- */
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
   }
-  
+
+  .contact-form {
+    padding: 1.8rem;
+  }
+
   .form-group-row {
     grid-template-columns: 1fr;
     gap: 0;
   }
-  
-  .timeline::before {
-    left: 20px;
+
+  .contact-card {
+    padding: 1.2rem;
   }
-  
-  .timeline-item {
-    padding-left: 55px;
+
+  /* --- Footer --- */
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
   }
-  
-  .timeline-icon {
-    left: 4px;
+
+  .footer {
+    margin-top: 60px;
+    padding: 2rem 0;
+  }
+}
+
+/* Small phones (≤ 420px) */
+@media (max-width: 420px) {
+  .hero-name {
+    font-size: clamp(1.6rem, 7.5vw, 2rem);
+  }
+
+  .hero-title {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-category:last-child {
+    grid-column: span 1;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .about-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .modal-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
   }
 }
 
