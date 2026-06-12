@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omar Lobo Cuesta | Desarrollador Web & Multiplataforma</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portafolio profesional de Omar Lobo Cuesta, desarrollador de aplicaciones web (DAW) y multiplataforma (DAM). Especializado en PHP (Laravel), Angular, Ionic y soluciones con Inteligencia Artificial.">
+  <meta name="keywords" content="Omar Lobo Cuesta, DAW, DAM, Desarrollador Web, Desarrollador Multiplataforma, Laravel, Ionic, Angular, Asturias, Gijon, Programador">
+  <meta name="author" content="Omar Lobo Cuesta">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Omar Lobo Cuesta | Desarrollador Web & Multiplataforma">
+  <meta property="og:description" content="Portafolio profesional de Omar Lobo Cuesta, desarrollador de aplicaciones web (DAW) y multiplataforma (DAM). Especializado en PHP (Laravel), Angular, Ionic y soluciones con Inteligencia Artificial.">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Omar Lobo Cuesta | Desarrollador Web & Multiplataforma">
+  <meta property="twitter:description" content="Portafolio profesional de Omar Lobo Cuesta, desarrollador de aplicaciones web (DAW) y multiplataforma (DAM). Especializado en PHP (Laravel), Angular, Ionic y soluciones con Inteligencia Artificial.">
+  
+  <!-- Favicon / Fonts / FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+  
+  <!-- Interactive Cursor Glow -->
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- ==========================================================================
+       HEADER / NAVIGATION
+       ========================================================================== -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#hero" class="logo" id="logo-link">
+        OMAR LOBO<span class="logo-dot"></span>
+      </a>
+      
+      <button class="menu-toggle" id="menu-toggle-btn" aria-label="Abrir menú de navegación">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <ul class="nav-menu" id="nav-menu-list">
+        <li><a href="#hero" class="nav-link active" id="nav-hero">Inicio</a></li>
+        <li><a href="#about" class="nav-link" id="nav-about">Sobre Mí</a></li>
+        <li><a href="#skills" class="nav-link" id="nav-skills">Habilidades</a></li>
+        <li><a href="#projects" class="nav-link" id="nav-projects">Proyectos</a></li>
+        <li><a href="#experience" class="nav-link" id="nav-experience">Trayectoria</a></li>
+        <li><a href="#contact" class="nav-link" id="nav-contact">Contacto</a></li>
+        <li><a href="./Currículum_OmarLobo.pdf" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;" target="_blank" download id="btn-download-cv-nav"><i class="fas fa-download"></i> Descargar CV</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section id="hero" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-greeting">Hola, mi nombre es</div>
+        <h1 class="hero-name">Omar Lobo Cuesta</h1>
+        <h2 class="hero-title" style="min-height: 50px;">Desarrollador <span id="typewriter" style="color: var(--secondary);"></span><span class="typewriter-cursor">|</span></h2>
+        <p class="hero-desc">
+          Titulado en <strong>DAW</strong> (Desarrollo de Aplicaciones Web) y <strong>DAM</strong> (Desarrollo de Aplicaciones Multiplataforma). Apasionado por construir soluciones modernas, escalables y eficientes que integran las últimas tecnologías web, móviles y de Inteligencia Artificial.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary" id="hero-btn-projects">
+            Ver Proyectos <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn btn-secondary" id="hero-btn-contact">
+            Contactar <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="hero-art">
+        <div class="tech-sphere">
+          <div class="floating-badge badge-1">
+            <i class="fab fa-laravel" style="color: #ff2d20; font-size: 1.2rem;"></i>
+            <span>Laravel</span>
+          </div>
+          <div class="floating-badge badge-2">
+            <i class="fab fa-angular" style="color: #dd0031; font-size: 1.2rem;"></i>
+            <span>Angular & Ionic</span>
+          </div>
+          <div class="floating-badge badge-3">
+            <i class="fab fa-js" style="color: #f7df1e; font-size: 1.2rem;"></i>
+            <span>JavaScript</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ABOUT ME SECTION
+       ========================================================================== */ -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">Sobre Mí</h2>
+      <p class="section-subtitle">Conoce mi perfil, motivación y trayectoria académica</p>
+      
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="glass-card about-card">
+            <h3>Perfil Profesional</h3>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-muted);">
+              Mi formación dual en desarrollo web y multiplataforma me permite afrontar proyectos desde una perspectiva integral. Me especializo tanto en el diseño de arquitecturas backend robustas como en la creación de interfaces de usuario premium y fluidas.
+            </p>
+            <div class="about-stat-grid">
+              <div class="stat-item">
+                <div class="stat-num">2</div>
+                <div class="stat-label">Grados Superiores</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-num">2</div>
+                <div class="stat-label">Proyectos TFG</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-text">
+          <p>
+            ¡Hola! Soy <strong>Omar Lobo Cuesta</strong>, un desarrollador de software con sede en Gijón, Asturias. Acabo de finalizar mis estudios en los Ciclos de Grado Superior en <strong>Desarrollo de Aplicaciones Web (DAW)</strong> y <strong>Desarrollo de Aplicaciones Multiplataforma (DAM)</strong>.
+          </p>
+          <p>
+            Durante mi formación, he consolidado una base sólida en el desarrollo de software, la gestión de bases de datos y la administración de sistemas. He tenido la oportunidad de realizar prácticas en consultoras líderes del sector como <strong>Capgemini</strong> y <strong>Triplo Mobile S.L.</strong>, donde reforcé mis habilidades técnicas y colaborativas trabajando en entornos ágiles (Scrum).
+          </p>
+          <p>
+            Tengo un gran interés en las tecnologías emergentes, especialmente en la <strong>integración de Inteligencia Artificial</strong> en software comercial, y siempre busco formas de crear interfaces interactivas y fluidas que aporten un gran valor al usuario final.
+          </p>
+          
+          <ul class="about-list">
+            <li class="about-list-item"><i class="fas fa-check-circle"></i> Disponibilidad de incorporación inmediata</li>
+            <li class="about-list-item"><i class="fas fa-check-circle"></i> Inglés nivel alto (B2 certificado por Cambridge)</li>
+            <li class="about-list-item"><i class="fas fa-check-circle"></i> Carnet de conducir y vehículo propio</li>
+            <li class="about-list-item"><i class="fas fa-check-circle"></i> Disponibilidad para viajar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SKILLS SECTION
+       ========================================================================== -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="section-title">Habilidades</h2>
+      <p class="section-subtitle">Mi stack tecnológico clasificado por áreas de especialización</p>
+      
+      <div class="skills-grid">
+        <!-- Backend -->
+        <div class="glass-card skills-category">
+          <h3 class="skills-cat-title"><i class="fas fa-server"></i> Desarrollo Backend</h3>
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">PHP & Laravel</span>
+                <span class="skill-percentage">90%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-width="90"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Java</span>
+                <span class="skill-percentage">80%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-width="80"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Python</span>
+                <span class="skill-percentage">75%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-width="75"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Bases de datos (SQL / MySQL)</span>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-width="85"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Frontend -->
+        <div class="glass-card skills-category">
+          <h3 class="skills-cat-title"><i class="fas fa-laptop-code"></i> Desarrollo Frontend & Mobile</h3>
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">JavaScript (ES6+) / HTML5 / CSS3</span>
+                <span class="skill-percentage">90%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-width="90"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Angular</span>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Ionic (Desarrollo Híbrido)</span>
+                <span class="skill-percentage">80%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-width="80"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Android Studio</span>
+                <span class="skill-percentage">70%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-width="70"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Herramientas y Otros -->
+        <div class="glass-card skills-category">
+          <h3 class="skills-cat-title"><i class="fas fa-tools"></i> Herramientas & Metodologías</h3>
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Git / GitHub</span>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Docker</span>
+                <span class="skill-percentage">75%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-width="75"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">IA Integrada (API Groq, Llama 3)</span>
+                <span class="skill-percentage">80%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-width="80"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Metodologías Ágiles (Scrum)</span>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-bar-bg">
+                <div class="skill-bar-fill" data-width="85"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tools tags -->
+      <div class="tools-cloud">
+        <h4 class="tools-title">Otras Tecnologías & Entornos</h4>
+        <div class="tools-tags">
+          <span class="tool-tag">Odoo</span>
+          <span class="tool-tag">Laravel Breeze</span>
+          <span class="tool-tag">XAMPP</span>
+          <span class="tool-tag">Eclipse</span>
+          <span class="tool-tag">NetBeans</span>
+          <span class="tool-tag">IntelliJ IDEA</span>
+          <span class="tool-tag">Vite</span>
+          <span class="tool-tag">Alpine.js</span>
+          <span class="tool-tag">XML / JSON</span>
+          <span class="tool-tag">Hardware y Soporte</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PROJECTS SECTION
+       ========================================================================== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title">Mis Proyectos</h2>
+      <p class="section-subtitle">Una selección de los proyectos finales de grado (TFG) y otros desarrollos destacados</p>
+      
+      <div class="projects-filter">
+        <button class="filter-btn active" data-filter="all" id="filter-all">Todos</button>
+        <button class="filter-btn" data-filter="web" id="filter-web">Web (DAW)</button>
+        <button class="filter-btn" data-filter="multi" id="filter-multi">Multiplataforma (DAM)</button>
+      </div>
+      
+      <div class="projects-grid">
+        <!-- Proyecto Monetix -->
+        <div class="glass-card project-card" data-category="multi" id="project-monetix">
+          <div class="project-header"></div>
+          <div class="project-body">
+            <span class="project-cat">TFG - Desarrollo Multiplataforma (DAM)</span>
+            <h3 class="project-title">Monetix - Gestión Financiera Inteligente</h3>
+            <p class="project-desc">
+              Plataforma premium de finanzas personales que une el control de gastos tradicional con la gestión avanzada de carteras de inversión. Cuenta con un diseño Glassmorphic vanguardista, optimización en carga de vistas, informes profesionales en PDF y un <strong>Asesor Financiero virtual por IA</strong> conectado con Groq API y Llama 3.1.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Ionic</span>
+              <span class="tech-tag">Angular</span>
+              <span class="tech-tag">PHP (Custom MVC)</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">Groq API</span>
+              <span class="tech-tag">Llama 3.1</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OLOBOC/monetix-platform" class="project-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> Código</a>
+              <button class="project-link open-modal-btn" data-project="monetix" style="background: none; border: none; padding: 0; cursor: pointer; font-family: inherit; font-size: inherit; font-weight: inherit; color: var(--text-muted);"><i class="fas fa-eye"></i> Detalles</button>
+              <span class="project-link" style="color: var(--text-muted); cursor: default;"><i class="fas fa-lock"></i> TFG</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Proyecto Estilo Vivo -->
+        <div class="glass-card project-card" data-category="web" id="project-estilovivo">
+          <div class="project-header"></div>
+          <div class="project-body">
+            <span class="project-cat">TFG - Desarrollo Web (DAW)</span>
+            <h3 class="project-title">Estilo Vivo - Gestión Web para Peluquería</h3>
+            <p class="project-desc">
+              Aplicación web integral para la administración y agendamiento de citas en peluquerías. Permite a los clientes registrarse, reservar servicios con profesionales específicos y gestionar sus reservas. Los peluqueros disponen de una agenda en tiempo real interactiva para visualizar y gestionar sus turnos asignados.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Laravel 11</span>
+              <span class="tech-tag">Tailwind CSS</span>
+              <span class="tech-tag">Blade</span>
+              <span class="tech-tag">Alpine.js</span>
+              <span class="tech-tag">Laravel Breeze</span>
+              <span class="tech-tag">Vite</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OLOBOC/tfg_estilovivo" class="project-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> Código</a>
+              <button class="project-link open-modal-btn" data-project="estilovivo" style="background: none; border: none; padding: 0; cursor: pointer; font-family: inherit; font-size: inherit; font-weight: inherit; color: var(--text-muted);"><i class="fas fa-eye"></i> Detalles</button>
+              <span class="project-link" style="color: var(--text-muted); cursor: default;"><i class="fas fa-lock"></i> TFG</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       EXPERIENCE SECTION (TIMELINE)
+       ========================================================================== -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="section-title">Trayectoria & Experiencia</h2>
+      <p class="section-subtitle">Mi recorrido académico y mi inserción en el mundo profesional</p>
+      
+      <div class="timeline">
+        <!-- Triplo Mobile -->
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="timeline-date">Feb 2026 - Abr 2026</div>
+          <div class="glass-card timeline-card">
+            <h3 class="timeline-title">Desarrollador de Software (Prácticas)</h3>
+            <div class="timeline-company">Triplo Mobile S.L.</div>
+            <p class="timeline-desc">
+              Participación activa en el desarrollo, pruebas y soporte de tareas operativas para aplicaciones móviles. Colaboración estrecha en procesos internos, atención a requerimientos del equipo y uso de herramientas digitales para la gestión y seguimiento de proyectos bajo metodologías ágiles.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Grado Superior DAM -->
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="timeline-date">2025 - 2026</div>
+          <div class="glass-card timeline-card">
+            <h3 class="timeline-title">Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
+            <div class="timeline-company">I.E.S. Montevil (Gijón)</div>
+            <p class="timeline-desc">
+              Especialización en desarrollo nativo e híbrido para dispositivos móviles, programación multiproceso, acceso a datos e interfaces premium en plataformas Android e híbridas (Ionic/Angular), finalizando con la presentación del proyecto final Monetix.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Capgemini -->
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="timeline-date">Abr 2025 - Jun 2025</div>
+          <div class="glass-card timeline-card">
+            <h3 class="timeline-title">Desarrollador Web (Prácticas)</h3>
+            <div class="timeline-company">Capgemini</div>
+            <p class="timeline-desc">
+              Formación y desarrollo de competencias en un entorno corporativo internacional. Colaboré con tecnologías web estándar y participé activamente en la conceptualización y codificación de un proyecto interno, compartiendo conocimientos con el equipo a través de charlas técnicas.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Grado Superior DAW -->
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="timeline-date">2023 - 2025</div>
+          <div class="glass-card timeline-card">
+            <h3 class="timeline-title">Técnico Superior en Desarrollo de Aplicaciones Web (DAW)</h3>
+            <div class="timeline-company">I.E.S. Montevil (Gijón)</div>
+            <p class="timeline-desc">
+              Formación integral en tecnologías web del lado del cliente y del servidor (PHP, Laravel, JS, MySQL, HTML, CSS), administración de servidores de aplicaciones y despliegue, culminando con el desarrollo de la plataforma web Estilo Vivo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT SECTION
+       ========================================================================== -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">Contacto</h2>
+      <p class="section-subtitle">¿Quieres hablar sobre una oportunidad o propuesta de trabajo? ¡Escríbeme!</p>
+      
+      <div class="contact-grid">
+        <div class="contact-info">
+          <!-- Card Teléfono -->
+          <div class="glass-card contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Teléfono</h4>
+              <p><a href="tel:+34684631117">684 631 117</a></p>
+            </div>
+          </div>
+          
+          <!-- Card Email -->
+          <div class="glass-card contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <p><a href="mailto:omarlobocuesta@gmail.com">omarlobocuesta@gmail.com</a></p>
+            </div>
+          </div>
+          
+          <!-- Card Localización -->
+          <div class="glass-card contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Ubicación</h4>
+              <p>33211 Gijón, Asturias (España)</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Formulario de contacto -->
+        <div class="glass-card contact-form">
+          <form id="contact-form">
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" id="name" class="form-control" placeholder="Tu nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-control" placeholder="tu@email.com" required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject" class="form-label">Asunto</label>
+              <input type="text" id="subject" class="form-control" placeholder="Asunto del mensaje" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message" class="form-label">Mensaje</label>
+              <textarea id="message" class="form-control" placeholder="¿En qué puedo ayudarte?" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary submit-btn" id="contact-submit-btn">
+              Enviar Mensaje <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-logo">OMAR LOBO</div>
+      
+      <ul class="footer-links">
+        <li><a href="#hero" class="footer-link">Inicio</a></li>
+        <li><a href="#about" class="footer-link">Sobre Mí</a></li>
+        <li><a href="#skills" class="footer-link">Habilidades</a></li>
+        <li><a href="#projects" class="footer-link">Proyectos</a></li>
+        <li><a href="#experience" class="footer-link">Trayectoria</a></li>
+      </ul>
+      
+      <div class="social-links">
+        <a href="https://github.com/OLOBOC" class="social-icon" target="_blank" rel="noopener" aria-label="GitHub de Omar"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/omar-lobo-cuesta-4703a5350" class="social-icon" target="_blank" rel="noopener" aria-label="LinkedIn de Omar"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:omarlobocuesta@gmail.com" class="social-icon" aria-label="Enviar Email a Omar"><i class="fas fa-envelope"></i></a>
+      </div>
+      
+      <p class="copyright">&copy; <span id="current-year"></span> Omar Lobo Cuesta. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODALS DE CASOS DE ESTUDIO
+       ========================================================================== -->
+  <!-- Modal Monetix -->
+  <div class="modal" id="modal-monetix">
+    <div class="modal-content glass-card">
+      <button class="close-modal-btn modal-close" aria-label="Cerrar modal">&times;</button>
+      <span class="project-cat">Caso de Estudio - DAM</span>
+      <h3 class="modal-title">Monetix: Gestión Financiera Inteligente</h3>
+      
+      <div class="modal-body">
+        <div class="modal-section">
+          <h4><i class="fas fa-info-circle"></i> Resumen del Proyecto</h4>
+          <p>Monetix es una plataforma premium concebida para unificar el control de gastos cotidianos con la gestión analítica de carteras de inversión. Incorpora análisis automatizados e interactivos por medio de IA para facilitar la toma de decisiones financieras.</p>
+        </div>
+        
+        <div class="modal-section">
+          <h4><i class="fas fa-sitemap"></i> Arquitectura y Tecnologías</h4>
+          <ul class="modal-tech-list">
+            <li><strong>Frontend:</strong> Ionic + Angular (TypeScript). Estructura SPA altamente optimizada y fluida. Interfaz basada en Glassmorphism con carga perezosa (lazy loading) de módulos y animaciones aceleradas por hardware.</li>
+            <li><strong>Backend:</strong> PHP Puro desarrollado con un patrón de arquitectura Modelo-Vista-Controlador (MVC) a medida, asegurando el desacoplamiento de la lógica de negocio, enrutamiento seguro de peticiones y saneamiento de datos.</li>
+            <li><strong>Base de Datos:</strong> MySQL. Modelo de datos relacional para usuarios, cuentas bancarias, transacciones recurrentes, tipos de activos financieros y registros de cotizaciones históricas.</li>
+            <li><strong>Integración de IA:</strong> Groq Cloud API y el modelo Llama 3.1. Permite realizar consultas contextuales al Asesor Financiero, analizando en tiempo real la salud de la cartera del usuario de forma totalmente anónima y segura.</li>
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fas fa-star"></i> Características Técnicas Clave</h4>
+          <ul class="modal-features-list">
+            <li><strong>Seeding Inteligente:</strong> Sistema que genera automáticamente un historial de transacciones financieras aleatorias y realistas de hasta un año completo, facilitando las pruebas de gráficos y reportes.</li>
+            <li><strong>Reportes PDF:</strong> Generación y formateo dinámico de informes de rendimiento y estados contables desde el servidor, listos para descargar o imprimir.</li>
+            <li><strong>Seguridad de Datos:</strong> Hash de contraseñas robusto, gestión segura de sesiones de usuario y variables de entorno protegidas.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Estilo Vivo -->
+  <div class="modal" id="modal-estilovivo">
+    <div class="modal-content glass-card">
+      <button class="close-modal-btn modal-close" aria-label="Cerrar modal">&times;</button>
+      <span class="project-cat">Caso de Estudio - DAW</span>
+      <h3 class="modal-title">Estilo Vivo: Gestión de Peluquería</h3>
+      
+      <div class="modal-body">
+        <div class="modal-section">
+          <h4><i class="fas fa-info-circle"></i> Resumen del Proyecto</h4>
+          <p>Estilo Vivo es un sistema web completo desarrollado en Laravel diseñado para digitalizar la agenda y reservas de una peluquería, eliminando la gestión telefónica manual y mejorando la ocupación diaria.</p>
+        </div>
+        
+        <div class="modal-section">
+          <h4><i class="fas fa-sitemap"></i> Arquitectura y Tecnologías</h4>
+          <ul class="modal-tech-list">
+            <li><strong>Backend:</strong> Laravel 11. Aprovecha las ventajas del framework: inyección de dependencias, Eloquent ORM para consultas ágiles a la base de datos, migraciones estructuradas y sistema de middleware para el control de roles de usuario.</li>
+            <li><strong>Autenticación:</strong> Laravel Breeze. Implementación rápida, limpia y segura de los flujos de registro, login, verificación de correo y recuperación de contraseñas.</li>
+            <li><strong>Frontend:</strong> Blade (motor de plantillas de Laravel) acoplado con Alpine.js para la interactividad rápida del lado del cliente (modales, menús y selects reactivos) y estilado con Tailwind CSS.</li>
+            <li><strong>Compilación:</strong> Vite. Configuración ágil de empaquetado para asegurar tiempos de carga mínimos.</li>
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h4><i class="fas fa-star"></i> Flujos de Trabajo Implementados</h4>
+          <ul class="modal-features-list">
+            <li><strong>Rol Cliente:</strong> Registro/Login -> Navegación por catálogo de servicios -> Selección de peluquero preferido -> Selector visual de fechas y horas disponibles -> Confirmación instantánea y guardado en su panel personal.</li>
+            <li><strong>Rol Peluquero:</strong> Panel de control optimizado. Carga una agenda diaria ordenada cronológicamente con los servicios pendientes, duración, nombre del cliente y notas adicionales.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Set dynamic current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>
