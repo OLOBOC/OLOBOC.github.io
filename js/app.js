@@ -316,32 +316,34 @@ document.addEventListener('DOMContentLoaded', () => {
       const subject = document.getElementById('subject').value.trim();
       const message = document.getElementById('message').value.trim();
 
+      if (!name || !email || !subject || !message) return;
+
       const submitBtn = contactForm.querySelector('.submit-btn');
       const originalHTML = submitBtn.innerHTML;
 
-      // Compose and open native mail client
-      const body = encodeURIComponent(
-        `Hola Omar,\n\nMe llamo ${name} (${email}) y me pongo en contacto contigo desde tu portafolio web.\n\n${message}\n\nSaludos,\n${name}`
-      );
-      const mailtoLink = `mailto:omarlobocuesta@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+      // Build mailto link
+      const bodyText = `Hola Omar,\n\nMe llamo ${name} y me pongo en contacto desde tu portafolio web.\nMi correo: ${email}\n\n${message}\n\nSaludos,\n${name}`;
+      const mailtoHref = `mailto:omarlobocuesta@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+
+      // Trigger via hidden anchor (most reliable cross-browser approach)
+      const anchor = document.createElement('a');
+      anchor.href = mailtoHref;
+      anchor.style.display = 'none';
+      document.body.appendChild(anchor);
+      anchor.click();
+      document.body.removeChild(anchor);
 
       // Visual feedback
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Abriendo correo...';
+      submitBtn.innerHTML = '<i class="fas fa-check"></i> ¡Cliente de correo abierto!';
+      submitBtn.style.background = 'linear-gradient(135deg, #00e5a8, #00b4db)';
+      contactForm.reset();
 
       setTimeout(() => {
-        window.location.href = mailtoLink;
-
-        submitBtn.innerHTML = '<i class="fas fa-check"></i> ¡Cliente de correo abierto!';
-        submitBtn.style.background = 'var(--grad-secondary)';
-        contactForm.reset();
-
-        setTimeout(() => {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalHTML;
-          submitBtn.style.background = '';
-        }, 4000);
-      }, 600);
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalHTML;
+        submitBtn.style.background = '';
+      }, 4000);
     });
   }
 
