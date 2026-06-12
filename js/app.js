@@ -185,16 +185,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // SKILLS ANIMATION (ON INTERSECT)
   // ==========================================================================
   const skillsSection = document.querySelector('#skills');
-  const skillItems = document.querySelectorAll('.skill-item');
+  const techCards = document.querySelectorAll('.tech-card');
 
   const animateSkills = (entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        skillItems.forEach((item, index) => {
+        techCards.forEach((item, index) => {
           setTimeout(() => {
             item.style.opacity = '1';
-            item.style.transform = 'translateX(0)';
-          }, index * 50);
+            item.style.transform = 'translateY(0)';
+          }, index * 40);
         });
         observer.unobserve(entry.target);
       }
@@ -203,10 +203,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const skillsObserver = new IntersectionObserver(animateSkills, { threshold: 0.1 });
   if (skillsSection) {
-    skillItems.forEach(item => {
+    techCards.forEach(item => {
       item.style.opacity = '0';
-      item.style.transform = 'translateX(-10px)';
-      item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      item.style.transform = 'translateY(15px)';
+      item.style.transition = 'opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
     });
     skillsObserver.observe(skillsSection);
   }

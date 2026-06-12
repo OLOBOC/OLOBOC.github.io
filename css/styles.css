@@ -645,34 +645,72 @@ input, button, textarea {
   color: var(--primary);
 }
 
-.skills-list {
+.tech-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.65rem;
+}
+
+.tech-card {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 1rem 0.5rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.25s ease;
+  cursor: default;
 }
 
-.skill-item {
+.tech-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.tech-icon-wrapper {
+  font-size: 2rem;
   display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  transition: transform var(--transition-fast);
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
 }
 
-.skill-item:hover {
-  transform: translateX(4px);
+.tech-card:hover .tech-icon-wrapper {
+  transform: scale(1.15);
 }
 
-.skill-name {
-  font-family: var(--font-heading);
+/* Specific icon colors */
+.tech-icon-laravel  { color: #ff2d20; }
+.tech-icon-php      { color: #8993be; }
+.tech-icon-java     { color: #f89820; }
+.tech-icon-python   { color: #4b8bbe; }
+.tech-icon-sql      { color: #00b4db; }
+.tech-icon-js       { color: #f7df1e; }
+.tech-icon-angular  { color: #dd0031; }
+.tech-icon-ionic    { color: #488aff; }
+.tech-icon-css      { color: #e44d26; }
+.tech-icon-n8n      { color: #ff6d5a; }
+.tech-icon-brain    { color: #a78bfa; }
+.tech-icon-robot    { color: #00e5a8; }
+.tech-icon-git      { color: #f05032; }
+.tech-icon-docker   { color: #2496ed; }
+.tech-icon-linux    { color: #fcc624; }
+.tech-icon-agile    { color: #34d399; }
+
+.tech-name {
+  font-size: 0.72rem;
   font-weight: 600;
-  font-size: 1.05rem;
-  color: var(--text-light);
-}
-
-.skill-details {
-  font-size: 0.85rem;
   color: var(--text-muted);
-  line-height: 1.5;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
 }
 
 /* Other tools / tags cloud */
