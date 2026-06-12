@@ -1,4 +1,74 @@
+// ==========================================================================
+// PARTICLE BACKGROUND SYSTEM
+// ==========================================================================
+(function initParticles() {
+  const canvas = document.getElementById('particle-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  const COLORS = ['rgba(82,140,255,', 'rgba(0,229,168,', 'rgba(167,139,250,'];
+  const COUNT = 70;
+
+  const resize = () => {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  };
+  resize();
+  window.addEventListener('resize', resize);
+
+  class Particle {
+    constructor() { this.reset(true); }
+    reset(init = false) {
+      this.x  = Math.random() * canvas.width;
+      this.y  = init ? Math.random() * canvas.height : canvas.height + 10;
+      this.r  = Math.random() * 1.6 + 0.4;
+      this.vx = (Math.random() - 0.5) * 0.25;
+      this.vy = -(Math.random() * 0.4 + 0.15);
+      this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
+      this.alpha = Math.random() * 0.5 + 0.15;
+    }
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.y < -10) this.reset();
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fillStyle = this.color + this.alpha + ')';
+      ctx.fill();
+    }
+  }
+
+  for (let i = 0; i < COUNT; i++) particles.push(new Particle());
+
+  const loop = () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Draw connecting lines between nearby particles
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 120) {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(82,140,255,${0.06 * (1 - dist / 120)})`;
+          ctx.lineWidth = 0.5;
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+      particles[i].update();
+      particles[i].draw();
+    }
+    requestAnimationFrame(loop);
+  };
+  loop();
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
+
 
   // ==========================================================================
   // SCROLL PROGRESS BAR
