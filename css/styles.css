@@ -54,6 +54,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  overflow-x: hidden; /* prevent any child from causing horizontal scroll */
 }
 
 body {
@@ -63,6 +64,8 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
+  width: 100%;
+  max-width: 100vw;
 }
 
 /* Particle canvas background */
@@ -147,6 +150,7 @@ input, button, textarea {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .section {
@@ -1302,13 +1306,18 @@ textarea.form-control {
 
   .hero-actions {
     justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     gap: 0.65rem;
+    width: 100%;
   }
 
   .hero-actions .btn {
-    font-size: 0.85rem;
-    padding: 0.65rem 1.1rem;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
   }
 
   .hero-art {
@@ -1377,16 +1386,22 @@ textarea.form-control {
   }
 
   /* --- Skills --- */
+  /* Force single column on all mobile — 2-col causes right-side overflow at 410px */
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .skills-category:last-child {
-    grid-column: span 2;
+    grid-column: span 1;
   }
 
   .skills-category {
     padding: 1.5rem;
+  }
+
+  /* Keep tech cards in 2 cols inside each category */
+  .tech-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /* --- Projects --- */
